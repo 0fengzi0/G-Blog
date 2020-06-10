@@ -10,6 +10,7 @@ function errorHandle(res) {
             break;
     }
     res.msg == null ? res.msg = "网络请求错误" : '';
+    // vant的toast显示错误提示
     // Bus.$toast.fail(res.msg);
 }
 
@@ -40,7 +41,8 @@ instance.interceptors.request.use(res => {
 
 // 响应拦截器
 instance.interceptors.response.use(res => {
-    Bus.$toast.clear();
+    // vant清理toast
+    // Bus.$toast.clear();
     if ( res.data.sessionid != null ) {
         Bus.$cookies.set('sessionid', res.data.sessionid)
     }
@@ -50,7 +52,8 @@ instance.interceptors.response.use(res => {
     }
     return Promise.resolve(res.data);
 }, error => {
-    Bus.$toast.clear();
+    // vant清理toast
+    // Bus.$toast.clear();
     let data = {
         code: error.response.status,
         msg: error.message,
@@ -65,11 +68,12 @@ let serviceHost = (process.env.NODE_ENV === 'production' || process.env.VUE_APP_
 
 
 function doHttp(url = "", type = "get", data = {}) {
-    Bus.$toast.loading({
-        message: '加载中...',
-        forbidClick: true,
-        duration: 0
-    });
+    // vant显示加载toast
+    // Bus.$toast.loading({
+    //     message: '加载中...',
+    //     forbidClick: true,
+    //     duration: 0
+    // });
     if ( type === "get" || type === "GET" ) {
         return instance.get(serviceHost + url, {
             params: data
