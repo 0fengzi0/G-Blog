@@ -1,12 +1,12 @@
 <template >
-    <div class="Index" >
-    
+    <div id="PaperPage" >
+        
     </div >
 </template >
 
 <script >
     export default {
-        name: "Index",
+        name: "PaperPage",
         // 引用组件
         components: {},
         // 绑定数据
@@ -14,12 +14,12 @@
             return {};
         },
         // 当页面开始渲染
-        mounted() {
+        mounted(res) {
             let that = this;
             
             // 当渲染完毕
             that.$nextTick(function () {
-                
+                console.log()
             })
         },
         // 其他方法
@@ -28,7 +28,7 @@
 </script >
 
 <style scoped lang="scss" >
-    #Index {
+    #PaperPage {
         
     }
 </style >

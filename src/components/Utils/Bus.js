@@ -4,5 +4,5 @@ const Bus = new Vue();
 
 export default Bus;
 
-//Bus.$emit("name",data)
-//Bus.$on("name",fun(){})
+// Bus.$emit("name", data)
+// Bus.$on("name", () => {})

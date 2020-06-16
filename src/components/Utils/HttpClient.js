@@ -2,6 +2,8 @@ import axios from "axios"
 import qs from 'qs';
 import Bus from "./Bus";
 
+import Config from '../../../static/Config.json';
+
 // 统一异常处理部分
 function errorHandle(res) {
     switch ( res.code ) {
@@ -21,7 +23,6 @@ const instance = axios.create({
     // 请求头
     headers: {
         'Content-Type': "application/x-www-form-urlencoded"
-        
     }
 });
 
@@ -29,27 +30,16 @@ const instance = axios.create({
 instance.interceptors.request.use(res => {
     if ( res.method === "post" || res.method === "POST" ) {
         res.data.time = new Date().getTime();
-        res.data.sessionid = Bus.$cookies.get('sessionid') == null ? '' : Bus.$cookies.get('sessionid');
         res.data = qs.stringify(res.data);
         return res;
     } else if ( res.method === "get" || res.method === "GET" ) {
         res.params.time = new Date().getTime();
-        res.params.sessionid = Bus.$cookies.get('sessionid') == null ? '' : Bus.$cookies.get('sessionid');
         return res;
     }
 });
 
 // 响应拦截器
 instance.interceptors.response.use(res => {
-    // vant清理toast
-    // Bus.$toast.clear();
-    if ( res.data.sessionid != null ) {
-        Bus.$cookies.set('sessionid', res.data.sessionid)
-    }
-    if ( res.data.code !== 200 ) {
-        errorHandle(res.data);
-        return Promise.reject(res.data);
-    }
     return Promise.resolve(res.data);
 }, error => {
     // vant清理toast
@@ -64,7 +54,7 @@ instance.interceptors.response.use(res => {
 });
 
 // 设置服务器地址,开发环境用
-let serviceHost = (process.env.NODE_ENV === 'production' || process.env.VUE_APP_HOST == null) ? 'https://127.0.0.1/' : process.env.VUE_APP_HOST;
+let serviceHost = (process.env.NODE_ENV === 'production' || process.env.VUE_APP_HOST == null) ? 'https://api.github.com/repos/' + Config.username + '/' + Config.repo : process.env.VUE_APP_HOST;
 
 
 function doHttp(url = "", type = "get", data = {}) {
