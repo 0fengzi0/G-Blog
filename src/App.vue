@@ -1,27 +1,22 @@
 <template >
-    <v-app id="app" >
-        <Menu ></Menu >
-        <!--页面内容-->
-        <v-main class="mt-14 mb-15" >
+    <v-app id="app" class="overflow-hidden" >
+        <Menu />
+        <title-bar />
+        <v-main :style="'background-image: url('+$Config.pageBackGroundImage+')'" >
             <router-view />
         </v-main >
-        <!--页面内容-->
-        <v-footer absolute class="text-center" >
-            <v-row >
-                <v-col cols="12" >
-                    {{ new Date().getFullYear() }} — <strong >Vuetify</strong >
-                </v-col >
-            </v-row >
-        </v-footer >
+        <page-foot />
     </v-app >
 </template >
 
 <script >
+    const TitleBar = () => import('./components/View/TitleBar')
     const Menu = () => import('./components/View/Menu');
+    const PageFoot = () => import('./components/View/PageFoot')
     
     export default {
         name: "app",
-        components: { Menu },
+        components: { TitleBar, Menu, PageFoot },
         // 初始化完成
         mounted() {
             let that = this;

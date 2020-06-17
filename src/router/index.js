@@ -7,15 +7,15 @@ const routes = [
     {
         path: '/',
         name: 'PaperList',
-        component: () => import('../components/View/PaperList'),
+        component: () => import('../components/View/IssuesList'),
         meta: {
             title: '小风的博客'
         }
     },
     {
-        path: '/paper/${id}',
+        path: '/paper/:id',
         name: 'PaperList',
-        component: () => import('../components/View/PaperPage'),
+        component: () => import('../components/View/Issues'),
         meta: {
             title: ''
         }

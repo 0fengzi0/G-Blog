@@ -3,12 +3,14 @@ import qs from 'qs';
 import Bus from "./Bus";
 
 import Config from '../../../static/Config.json';
+import router from "../../router";
 
 // 统一异常处理部分
 function errorHandle(res) {
     switch ( res.code ) {
         case 404:
             res.msg = "404文件不存在"
+            // router.push("/");
             break;
     }
     res.msg == null ? res.msg = "网络请求错误" : '';
