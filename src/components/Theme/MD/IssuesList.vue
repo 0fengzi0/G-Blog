@@ -14,7 +14,7 @@
                         <v-img
                                 class="white--text align-end"
                                 height="28vh"
-                                :src="$Config.pageCardImgServers + '?tid='+new Date().getTime()+Math.round(Math.random()*1000)"
+                                :src="$config.pageCardImgServers + '?tid='+new Date().getTime()+Math.round(Math.random()*1000)"
                         >
                         </v-img >
                         
@@ -31,7 +31,7 @@
 
 <script >
     import Issues from "../../Http/Issues";
-    import Config from "../../../../public/Config.json"
+    import config from "../../../../public/config.json"
     
     export default {
         name: "IssuesList",
@@ -53,7 +53,7 @@
                 Issues.getIssuesList().then(res => {
                     that.issuesList = [];
                     res.forEach(res => {
-                        if ( res.user.login === Config.username ) {
+                        if ( res.user.login === config.username ) {
                             that.issuesList.push(res)
                         }
                     })

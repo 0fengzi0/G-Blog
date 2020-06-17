@@ -1,5 +1,5 @@
 <template >
-    <v-app-bar app>
+    <v-app-bar app >
         <v-app-bar-nav-icon @click="chickMenuButton" ></v-app-bar-nav-icon >
         <v-toolbar-title >{{ title }}</v-toolbar-title >
         <v-spacer ></v-spacer >
@@ -9,6 +9,8 @@
                 single-line
                 append-icon="mdi-magnify"
                 @click:append="search"
+                placeholder="请输入你要搜索的内容"
+                :color="$vuetify.theme.dark?'white':'black'"
         >
         </v-text-field >
     </v-app-bar >

@@ -1,9 +1,8 @@
 import HttpClient from "../Utils/HttpClient";
 
+// 获取分类列表
 function getPageLabels() {
-    HttpClient.doHttp("/labels", "get").then(res => {
-        console.log(res)
-    })
+    return HttpClient.doHttp("/labels", "get");
 }
 
 export default {

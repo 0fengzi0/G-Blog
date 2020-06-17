@@ -11,7 +11,7 @@
                         <v-img
                                 class="white--text align-end"
                                 height="28vh"
-                                :src="$Config.pageCardImgServers + '?tid='+new Date().getTime()+Math.round(Math.random()*1000)"
+                                :src="$config.pageCardImgServers + '?tid='+new Date().getTime()+Math.round(Math.random()*1000)"
                         >
                             <v-card-title class="bg-gray-blur" >
                                 <span class="text-truncate d-inline-block" >{{ issues.title }}</span >
@@ -22,7 +22,7 @@
                                 <v-icon dark >mdi-account-circle</v-icon >
                             </v-avatar >
                             <div >
-                                <div class="" >{{ issues.user.login }}</div >
+                                <div class="" >{{ $config.nickname }}</div >
                                 <div class="body-2 font-weight-light" >{{ issues.created_at }}</div >
                             </div >
                         </v-card-title >

@@ -2,7 +2,7 @@ import axios from "axios"
 import qs from 'qs';
 import Bus from "./Bus";
 
-import Config from '../../../public/Config.json';
+import config from '../../../public/config.json';
 import router from "../../router";
 
 // 统一异常处理部分
@@ -56,7 +56,7 @@ instance.interceptors.response.use(res => {
 });
 
 // 设置服务器地址,开发环境用
-let serviceHost = (process.env.NODE_ENV === 'production' || process.env.VUE_APP_HOST == null) ? 'https://api.github.com/repos/' + Config.username + '/' + Config.repo : process.env.VUE_APP_HOST;
+let serviceHost = (process.env.NODE_ENV === 'production' || process.env.VUE_APP_HOST == null) ? 'https://api.github.com/repos/' + config.username + '/' + config.repo : process.env.VUE_APP_HOST;
 
 
 function doHttp(url = "", type = "get", data = {}) {
