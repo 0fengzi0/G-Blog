@@ -65,13 +65,19 @@
                 }
             };
         },
+        // 当路由改变
+        beforeRouteEnter(to, from, next) {
+            next(async vm => {
+                let that = this;
+                await vm.getIssues(to.params.id);
+                document.title = "i小风-" + vm.issues.title
+            })
+        },
         // 当页面开始渲染
         mounted() {
             let that = this;
             // 当渲染完毕
             that.$nextTick(async function () {
-                await that.getIssues(that.$route.params.id);
-                document.title = "i小风-" + that.issues.title
             })
         },
         // 其他方法

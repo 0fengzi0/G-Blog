@@ -5,7 +5,9 @@
                 <Menu />
                 <title-bar />
                 <v-main >
-                    <router-view />
+                    <keep-alive >
+                        <router-view />
+                    </keep-alive >
                 </v-main >
                 <page-foot />
             </div >
