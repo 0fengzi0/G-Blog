@@ -1,18 +1,22 @@
 <template >
-    <v-app id="app" class="overflow-hidden" >
-        <Menu />
-        <title-bar />
-        <v-main :style="'background-image: url('+$Config.pageBackGroundImage+')'" >
-            <router-view />
-        </v-main >
-        <page-foot />
+    <v-app id="app" :style="'background-image: url('+$Config.pageBackGroundImage+')'" >
+        <m-scroll >
+            <div class="d-flex flex-column" style="position:absolute;height: 100%;width: 100%" >
+                <Menu />
+                <title-bar />
+                <v-main >
+                    <router-view />
+                </v-main >
+                <page-foot />
+            </div >
+        </m-scroll >
     </v-app >
 </template >
 
 <script >
-    const TitleBar = () => import('./components/View/TitleBar')
-    const Menu = () => import('./components/View/Menu');
-    const PageFoot = () => import('./components/View/PageFoot')
+    const TitleBar = () => import('./components/Theme/MD/TitleBar')
+    const Menu = () => import('./components/Theme/MD/Menu');
+    const PageFoot = () => import('./components/Theme/MD/PageFoot')
     
     export default {
         name: "app",
@@ -36,5 +40,9 @@
         height: 100%;
         margin: 0;
         padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
     }
 </style >

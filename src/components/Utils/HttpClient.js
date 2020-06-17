@@ -2,7 +2,7 @@ import axios from "axios"
 import qs from 'qs';
 import Bus from "./Bus";
 
-import Config from '../../../static/Config.json';
+import Config from '../../../public/Config.json';
 import router from "../../router";
 
 // 统一异常处理部分

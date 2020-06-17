@@ -1,8 +1,13 @@
 <template >
-    <v-footer app class="text-center" >
-        <v-row >
+    <v-footer class="text-center" >
+        <v-row dense >
             <v-col cols="12" >
-                {{ new Date().getFullYear() }} — <strong >Vuetify</strong >
+                Copyright © {{ new Date().getFullYear() }} <strong ><a href="" >小风</a > All rights reserved. </strong >
+            </v-col >
+            <v-col cols="12" v-if="$Config.recordCode!=null&&$Config.recordCode!=''" >
+                <a :class="$vuetify.theme.dark?'white--text':'black--text'"
+                   href="http://www.beian.miit.gov.cn/" >{{$Config.recordCode }}
+                </a >
             </v-col >
         </v-row >
     </v-footer >
@@ -32,7 +37,4 @@
 </script >
 
 <style scoped lang="scss" >
-    #PageFoot {
-        
-    }
 </style >

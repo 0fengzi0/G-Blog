@@ -15,7 +15,7 @@
 </template >
 
 <script >
-    import Bus from "../Utils/Bus";
+    import Bus from "../../Utils/Bus";
     
     export default {
         name: "TitleBar",

@@ -5,7 +5,7 @@ import VueCookies from 'vue-cookies'
 import Vuetify from 'vuetify/lib'
 import 'vuetify/dist/vuetify.min.css'
 import HttpClient from "./components/Utils/HttpClient"
-import Config from "../static/Config.json"
+import Config from "../public/Config.json"
 import vuescroll from 'vuescroll';
 
 Vue.prototype.$HttpClient = HttpClient;
@@ -32,7 +32,7 @@ new Vue({
     render: h => h(App),
     vuetify: new Vuetify({
         theme: {
-            // dark: true
+            dark: true
         }
     })
 }).$mount('#app');

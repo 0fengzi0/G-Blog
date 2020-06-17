@@ -45,7 +45,7 @@
 </template >
 
 <script >
-    import Issues from "../Http/Issues";
+    import Issues from "../../Http/Issues";
     
     const MarkdownIt = require('markdown-it'), md = new MarkdownIt();
     
@@ -69,17 +69,18 @@
         mounted() {
             let that = this;
             // 当渲染完毕
-            that.$nextTick(function () {
-                that.getIssues(that.$route.params.id);
+            that.$nextTick(async function () {
+                await that.getIssues(that.$route.params.id);
+                document.title = "i小风-" + that.issues.title
             })
         },
         // 其他方法
         methods: {
             // 获取文章详细内容
-            getIssues(id) {
+            async getIssues(id) {
                 let that = this;
                 that.isLoading = true;
-                Issues.getIssues(id).then(res => {
+                await Issues.getIssues(id).then(res => {
                     that.issues = res;
                     that.mdtext = md.render(res.body);
                     that.isLoading = false;
