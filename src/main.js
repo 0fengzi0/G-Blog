@@ -21,7 +21,7 @@ Vue.use(vuescroll, {
         bar: {
             hoverStyle: true,
             onlyShowBarOnScroll: false, //是否只有滚动的时候才显示滚动条
-            background: new Date().getHours() >= 19 && new Date().getHours() <= 7 ? 'white' : 'black',   //颜色
+            background: new Date().getHours() >= 19 || new Date().getHours() < 7 ? 'white' : 'black',   //颜色
         }
     }
 })
@@ -32,7 +32,7 @@ new Vue({
     render: h => h(App),
     vuetify: new Vuetify({
         theme: {
-            dark: new Date().getHours() >= 19 && new Date().getHours() <= 7
+            dark: new Date().getHours() >= 19 || new Date().getHours() < 7
         }
     })
 }).$mount('#app');
