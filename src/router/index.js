@@ -23,7 +23,8 @@ const routes = [
 ];
 
 const router = new VueRouter({
-    mode: 'history',
+    // history刷新会404被迫弃用,等找到解决方法后换回来
+    // mode: 'history',
     base: process.env.BASE_URL,
     routes
 });

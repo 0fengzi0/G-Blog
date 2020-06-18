@@ -10,7 +10,7 @@ function errorHandle(res) {
     switch ( res.code ) {
         case 404:
             res.msg = "404文件不存在"
-            // router.push("/");
+            router.push("/");
             break;
     }
     res.msg == null ? res.msg = "网络请求错误" : '';
@@ -24,7 +24,8 @@ const instance = axios.create({
     timeout: 1000 * 15,
     // 请求头
     headers: {
-        'Content-Type': "application/x-www-form-urlencoded"
+        'Content-Type': "application/x-www-form-urlencoded",
+        "Authorization": config.token
     }
 });
 

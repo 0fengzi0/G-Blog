@@ -35,7 +35,7 @@
                         :loading="isLoading"
                         :class="$vuetify.theme.dark?'black':'white'"
                 >
-                    <v-card elevation="10" >
+                    <v-card elevation="10" min-height="200px" >
                         <v-card-text class="markdown-body" v-html="mdtext" />
                     </v-card >
                 </v-skeleton-loader >

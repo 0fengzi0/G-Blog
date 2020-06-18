@@ -2,15 +2,17 @@
     <v-container >
         <v-row justify-lg="center" >
             <v-col cols="12"
-                   lg="6"
+                   lg="4"
                    v-for="(item,index) in issuesList"
-                   :key="index" >
+                   :key="index"
+            >
                 <v-skeleton-loader
                         type="card"
                         :loading="isLoading"
                         :class="$vuetify.theme.dark?'black':'white'"
                 >
-                    <v-card elevation="10" :to="`/paper/${item.number}`" >
+                    <v-card elevation="10" :to="`/paper/${item.number}`"
+                            transition="slide-x-transition" >
                         <v-img
                                 class="white--text align-end"
                                 height="28vh"
@@ -32,6 +34,7 @@
 <script >
     import Issues from "../../Http/Issues";
     import config from "../../../../public/config.json"
+    import Bus from "../../Utils/Bus";
     
     export default {
         name: "IssuesList",
@@ -49,8 +52,19 @@
             let that = this;
             // 当渲染完毕
             that.$nextTick(function () {
+                that.getIssuesList();
+            })
+            Bus.$on("getIssuesList", res => {
+                that.getIssuesList(res)
+            })
+        },
+        // 其他方法
+        methods: {
+            // 获取文章列表
+            getIssuesList(whereData = {}) {
+                let that = this;
                 that.isLoading = true;
-                Issues.getIssuesList().then(res => {
+                Issues.getIssuesList(whereData).then(res => {
                     that.issuesList = [];
                     res.forEach(res => {
                         if ( res.user.login === config.username ) {
@@ -59,10 +73,8 @@
                     })
                     that.isLoading = false;
                 })
-            })
-        },
-        // 其他方法
-        methods: {}
+            }
+        }
     };
 </script >
 

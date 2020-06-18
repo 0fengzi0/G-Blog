@@ -24,7 +24,7 @@
                         dense
                 >
                     <v-list-item @click="drawer = false" v-for="(item,index) in menuList" :key="index"
-                                 :to="item.url!=null&&item.url!=''?item.url:''" >
+                                 :to="item.path!=null?item.path:''" >
                         <v-list-item-icon >
                             <v-icon >{{ item.icon }}</v-icon >
                         </v-list-item-icon >
@@ -38,8 +38,11 @@
                             </v-list-item-icon >
                             <v-list-item-title >标签分类</v-list-item-title >
                         </template >
-                        
-                        <v-list-item link v-for="(item,index) in labelsList" :key="index" >
+                        <v-list-item >
+                            <v-list-item-title @click="getIssuesFromLabel()" >全部</v-list-item-title >
+                        </v-list-item >
+                        <v-list-item link v-for="(item,index) in labelsList" :key="index"
+                                     @click="getIssuesFromLabel(item.name)" >
                             <v-list-item-title >{{ item.name }}</v-list-item-title >
                         </v-list-item >
                     </v-list-group >
@@ -60,7 +63,8 @@
         props: {
             title: {
                 title: String,
-                default: "主页"
+                default: "主页",
+                path: "/"
             }
         },
         // 绑定数据
@@ -94,15 +98,21 @@
         },
         // 其他方法
         methods: {
-            search() {
-                console.log(123)
-            },
-            
             // 获取标签列表
             getPageLabels() {
                 let that = this;
                 Labels.getPageLabels().then(res => {
                     that.labelsList = res
+                })
+            },
+            
+            // 通过标签筛选文章
+            getIssuesFromLabel(label) {
+                let that = this;
+                that.drawer = false;
+                that.$route.path == '/' ? '' : that.$router.push("/");
+                Bus.$emit('getIssuesList', {
+                    labels: label
                 })
             }
         }
