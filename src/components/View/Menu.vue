@@ -53,8 +53,8 @@
 </template >
 
 <script >
-    import Bus from "../../Utils/Bus";
-    import Labels from "../../Http/Labels";
+    import Bus from "../Utils/Bus";
+    import Labels from "../Http/Labels";
     
     export default {
         name: "Menu",
@@ -111,7 +111,7 @@
                 let that = this;
                 that.drawer = false;
                 that.$route.path == '/' ? '' : that.$router.push("/");
-                Bus.$emit('getIssuesList', {
+                Bus.$emit('get-issues-from-label', {
                     labels: label
                 })
             }

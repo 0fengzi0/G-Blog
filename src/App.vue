@@ -16,9 +16,9 @@
 </template >
 
 <script >
-    const TitleBar = () => import('./components/Theme/MD/TitleBar')
-    const Menu = () => import('./components/Theme/MD/Menu');
-    const PageFoot = () => import('./components/Theme/MD/PageFoot')
+    const TitleBar = () => import('./components/View/TitleBar')
+    const Menu = () => import('./components/View/Menu');
+    const PageFoot = () => import('./components/View/PageFoot')
     
     export default {
         name: "app",

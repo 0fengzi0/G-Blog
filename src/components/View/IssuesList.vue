@@ -32,9 +32,9 @@
 </template >
 
 <script >
-    import Issues from "../../Http/Issues";
-    import config from "../../../../public/config.json"
-    import Bus from "../../Utils/Bus";
+    import Issues from "../Http/Issues";
+    import config from "../../../public/config.json"
+    import Bus from "../Utils/Bus";
     
     export default {
         name: "IssuesList",
@@ -54,8 +54,13 @@
             that.$nextTick(function () {
                 that.getIssuesList();
             })
-            Bus.$on("getIssuesList", res => {
+            // 通过标签获取文章
+            Bus.$on("get-issues-from-label", res => {
                 that.getIssuesList(res)
+            })
+            // 搜索文章
+            Bus.$on("search-issues", res => {
+                that.searchIssues(res)
             })
         },
         // 其他方法
@@ -67,9 +72,20 @@
                 Issues.getIssuesList(whereData).then(res => {
                     that.issuesList = [];
                     res.forEach(res => {
-                        if ( res.user.login === config.username ) {
-                            that.issuesList.push(res)
-                        }
+                        that.issuesList.push(res)
+                    })
+                    that.isLoading = false;
+                })
+            },
+            
+            // 搜索文章
+            searchIssues(whereData = "") {
+                let that = this;
+                that.isLoading = true;
+                Issues.searchIssues(whereData).then(res => {
+                    that.issuesList = [];
+                    res.items.forEach(res => {
+                        that.issuesList.push(res)
                     })
                     that.isLoading = false;
                 })

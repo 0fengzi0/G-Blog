@@ -7,7 +7,7 @@ const routes = [
     {
         path: '/',
         name: 'PaperList',
-        component: () => import('../components/Theme/MD/IssuesList'),
+        component: () => import('../components/View/IssuesList'),
         meta: {
             title: '小风的博客'
         }
@@ -15,7 +15,7 @@ const routes = [
     {
         path: '/paper/:id',
         name: 'PaperList',
-        component: () => import('../components/Theme/MD/Issues'),
+        component: () => import('../components/View/Issues'),
         meta: {
             title: ''
         }

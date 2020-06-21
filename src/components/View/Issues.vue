@@ -45,7 +45,7 @@
 </template >
 
 <script >
-    import Issues from "../../Http/Issues";
+    import Issues from "../Http/Issues";
     
     const MarkdownIt = require('markdown-it'), md = new MarkdownIt();
     

@@ -57,7 +57,7 @@ instance.interceptors.response.use(res => {
 });
 
 // 设置服务器地址,开发环境用
-let serviceHost = (process.env.NODE_ENV === 'production' || process.env.VUE_APP_HOST == null) ? 'https://api.github.com/repos/' + config.username + '/' + config.repo : process.env.VUE_APP_HOST;
+let serviceHost = (process.env.NODE_ENV === 'production' || process.env.VUE_APP_HOST == null) ? 'https://api.github.com' : process.env.VUE_APP_HOST;
 
 
 function doHttp(url = "", type = "get", data = {}) {

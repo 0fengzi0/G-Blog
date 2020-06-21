@@ -9,6 +9,7 @@
                 single-line
                 append-icon="mdi-magnify"
                 @click:append="search"
+                v-model="inputWhereData"
                 placeholder="请输入你要搜索的内容"
                 :color="$vuetify.theme.dark?'white':'black'"
         >
@@ -17,7 +18,7 @@
 </template >
 
 <script >
-    import Bus from "../../Utils/Bus";
+    import Bus from "../Utils/Bus";
     
     export default {
         name: "TitleBar",
@@ -31,7 +32,9 @@
         },
         // 绑定数据
         data() {
-            return {};
+            return {
+                inputWhereData: ""
+            };
         },
         // 当页面开始渲染
         mounted() {
@@ -46,7 +49,10 @@
         methods: {
             // 搜索
             search() {
-                console.log(123)
+                let that = this;
+                that.$route.path == '/' ? '' : that.$router.push("/");
+                Bus.$emit("search-issues", that.inputWhereData);
+                that.inputWhereData = "";
             },
             
             // 点击菜单按钮
