@@ -1,4 +1,4 @@
-# 基于github的个人博客  ([演示地址](https://0fengzi0.github.io))
+# 基于github的个人博客  ([演示地址](https://blog.5ixf.cc))
 源码以及功能请 [点击这里查看](https://github.com/0fengzi0/G-Blog)
 ### 使用教程
 直接Fork [编译完成的](https://github.com/0fengzi0/0fengzi0.github.io) 并修改以下配置即可使用
