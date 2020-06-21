@@ -4,6 +4,7 @@ import config from '../../../public/config.json';
 // 获取所有issues(文章)列表
 function getIssuesList(whereData) {
     whereData.creator = config.username
+    whereData.state = "all"
     return HttpClient.doHttp("/issues", "get", whereData);
 }
 
