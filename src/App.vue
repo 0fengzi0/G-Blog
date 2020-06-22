@@ -1,5 +1,5 @@
 <template >
-    <v-app id="app" class="index-bg-img" :style="'background-image: url('+$config.pageBackGroundImage+')'" >
+    <v-app id="app" class="index-bg-img" :style="'background-image: url('+$Config.pageBackGroundImage+')'" >
         <m-scroll >
             <div class="d-flex flex-column" style="position:absolute;height: 100%;width: 100%" >
                 <Menu />

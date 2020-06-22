@@ -13,8 +13,8 @@
                         </v-avatar >
                     </v-col >
                     <v-col class="ml-3 mr-3 mt-1 mb-1" >
-                        <div class="subheading font-weight-black" >{{ $config.nickname }}</div >
-                        <div class="body-1" >E-Mail：{{ $config.email }}</div >
+                        <div class="subheading font-weight-black" >{{ $Config.nickname }}</div >
+                        <div class="body-1" >E-Mail：{{ $Config.email }}</div >
                     </v-col >
                 </v-row >
             </v-img >
@@ -38,9 +38,6 @@
                             </v-list-item-icon >
                             <v-list-item-title >标签分类</v-list-item-title >
                         </template >
-                        <v-list-item >
-                            <v-list-item-title @click="getIssuesFromLabel()" >全部</v-list-item-title >
-                        </v-list-item >
                         <v-list-item link v-for="(item,index) in labelsList" :key="index"
                                      @click="getIssuesFromLabel(item.name)" >
                             <v-list-item-title >{{ item.name }}</v-list-item-title >

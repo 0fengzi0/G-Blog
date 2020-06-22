@@ -2,7 +2,6 @@ import axios from "axios"
 import qs from 'qs';
 import Bus from "./Bus";
 
-import config from '../../../public/config.json';
 import router from "../../router";
 
 // 统一异常处理部分
@@ -25,7 +24,7 @@ const instance = axios.create({
     // 请求头
     headers: {
         'Content-Type': "application/x-www-form-urlencoded",
-        "Authorization": config.token
+        "Authorization": window.$config.token
     }
 });
 

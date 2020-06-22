@@ -16,7 +16,7 @@
                         <v-img
                                 class="white--text align-end"
                                 height="28vh"
-                                :src="$config.pageCardImgServers + '?tid='+new Date().getTime()+Math.round(Math.random()*1000)"
+                                :src="$Config.pageCardImgServers + '?tid='+new Date().getTime()+Math.round(Math.random()*1000)"
                         >
                         </v-img >
                         
@@ -33,7 +33,6 @@
 
 <script >
     import Issues from "../Http/Issues";
-    import config from "../../../public/config.json"
     import Bus from "../Utils/Bus";
     
     export default {

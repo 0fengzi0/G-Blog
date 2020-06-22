@@ -1,11 +1,11 @@
 # 基于github的个人博客  ([演示地址](https://blog.5ixf.cc))
-源码以及功能请 [点击这里查看](https://github.com/0fengzi0/G-Blog)
+本项目由服务器自动构建，源码以及功能请 [点击这里查看](https://github.com/0fengzi0/G-Blog)
 ### 使用教程
 直接Fork [编译完成的](https://github.com/0fengzi0/0fengzi0.github.io) 并修改以下配置即可使用
 
-修改配置文件```/config.json```
-```json5
-{
+修改配置文件```/config.js```
+```js
+window.$config = {
   // 页面背景图
   "pageBackGroundImage": "",
   // 文章头图api
@@ -23,3 +23,8 @@
   // github的开发者token(可不填写,不填写每小时最高60次调用)
   "token": ""
 }
+```
+修改绑定的域名```/CNAME```
+```text
+blog.5ixf.cc
+```

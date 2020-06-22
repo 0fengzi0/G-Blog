@@ -1,8 +1,7 @@
-# 基于github的个人博客
-
-修改配置文件```/public/Config.json```
-```json5
-{
+# 基于github的个人博客 ([演示地址](https://blog.5ixf.cc))
+修改配置文件```/public/Config.js```
+```js
+window.$config = {
   // 页面背景图
   "pageBackGroundImage": "",
   // 文章头图api
@@ -21,6 +20,10 @@
   "token": ""
 }
 ```
+修改绑定的域名```/public/CNAME```
+```text
+blog.5ixf.cc
+```
 ### 计划功能
 - [x] 移动端适配
 - [x] 文章拉取
@@ -32,6 +35,7 @@
 - [x] api token提高每小时调用次数
 - [x] makedown支持
 - [ ] 页面细节优化(日期,makedown样式) 
+- [x] git自动化部署(auto_git.sh文件)
 
 ### 考虑中
 - [ ] 评论区
