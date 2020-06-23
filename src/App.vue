@@ -1,7 +1,7 @@
 <template >
-    <v-app id="app" class="index-bg-img" :style="'background-image: url('+$Config.pageBackGroundImage+')'" >
+    <div id="app" >
         <m-scroll >
-            <div class="d-flex flex-column" style="position:absolute;height: 100%;width: 100%" >
+            <v-app class="index-bg-img" :style="'background-image: url('+$Config.pageBackGroundImage+')'" >
                 <Menu />
                 <title-bar />
                 <v-main >
@@ -10,9 +10,9 @@
                     </keep-alive >
                 </v-main >
                 <page-foot />
-            </div >
+            </v-app >
         </m-scroll >
-    </v-app >
+    </div >
 </template >
 
 <script >
@@ -37,11 +37,13 @@
 </script >
 
 <style lang="scss" >
+    
     html, body, #app {
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
+        overflow: hidden;
     }
     
     a {
