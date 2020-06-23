@@ -23,12 +23,12 @@
                         nav
                         dense
                 >
-                    <v-list-item @click="drawer = false" v-for="(item,index) in menuList" :key="index"
-                                 :to="item.path!=null?item.path:''" >
+                    
+                    <v-list-item @click="drawer=false" to="/" >
                         <v-list-item-icon >
-                            <v-icon >{{ item.icon }}</v-icon >
+                            <v-icon >mdi-home</v-icon >
                         </v-list-item-icon >
-                        <v-list-item-title >{{ item.name }}</v-list-item-title >
+                        <v-list-item-title >主页</v-list-item-title >
                     </v-list-item >
                     
                     <v-list-group no-action >
@@ -43,6 +43,35 @@
                             <v-list-item-title >{{ item.name }}</v-list-item-title >
                         </v-list-item >
                     </v-list-group >
+                    
+                    <!--外链列表-->
+                    <v-list-group no-action v-for="(linkList,linkIndex) in $Config.outerLinkList"
+                                  :key="'link-'+linkIndex" >
+                        <template v-slot:activator >
+                            <v-list-item-icon >
+                                <v-icon >{{ linkList.icon }}</v-icon >
+                            </v-list-item-icon >
+                            <v-list-item-title >{{ linkList.name }}</v-list-item-title >
+                        </template >
+                        <v-list-item link v-for="(itemList, itemIndex) in linkList.items" :key="'linkItem-'+itemIndex" >
+                            <v-list-item-title >
+                                <a target="_blank" class="d-block"
+                                   :class="$vuetify.theme.dark?'white--text':'black--text '"
+                                   :href="itemList.url" >{{ itemList.name }}</a >
+                            </v-list-item-title >
+                        </v-list-item >
+                    </v-list-group >
+                    
+                    
+                    <v-list-item @click="drawer=false" v-for="(issuesItem,issuesIndex) in $Config.issuesNumberList"
+                                 :key="'issues-'+issuesIndex"
+                                 :to="'/paper/'+issuesItem.number" >
+                        <v-list-item-icon >
+                            <v-icon >{{ issuesItem.icon }}</v-icon >
+                        </v-list-item-icon >
+                        <v-list-item-title >{{ issuesItem.name }}</v-list-item-title >
+                    </v-list-item >
+                
                 </v-list >
             </m-scroll >
         </div >
@@ -57,27 +86,12 @@
         name: "Menu",
         // 引用组件
         components: {},
-        props: {
-            title: {
-                title: String,
-                default: "主页",
-                path: "/"
-            }
-        },
         // 绑定数据
         data() {
             return {
                 // 侧边栏状态
                 drawer: false,
-                // 侧边栏内容
-                menuList: [
-                    {
-                        id: 1,
-                        name: '主页',
-                        url: "/",
-                        icon: 'mdi-home'
-                    }
-                ],
+                // 标签列表
                 labelsList: []
             };
         },

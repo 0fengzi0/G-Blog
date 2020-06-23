@@ -2,22 +2,43 @@
 修改配置文件```/public/Config.js```
 ```js
 window.$config = {
-  // 页面背景图
-  "pageBackGroundImage": "",
-  // 文章头图api
-  "pageCardImgServers": "https://api.9jojo.cn/acgpic",
-  // github用户名
-  "username": "0fengzi0",
-  // 自定义的昵称(显示用)
-  "nickname": "",
-  // 自己的Email(首页显示用)
-  "email": "1209711408@QQ.COM",
-  // 要抓取issues的仓库
-  "repo": "",
-  // 备案号
-  "recordCode": "",
-  // github的开发者token(可不填写,不填写每小时最高60次调用)
-  "token": ""
+    // 页面背景图
+    "pageBackGroundImage": "",
+    // 文章头图api
+    "pageCardImgServers": "https://api.9jojo.cn/acgpic",
+    // github用户名
+    "username": "0fengzi0",
+    // 自定义的昵称(显示用)
+    "nickname": "",
+    // 自己的Email(首页显示用)
+    "email": "1209711408@QQ.COM",
+    // 要抓取issues的仓库
+    "repo": "",
+    // 备案号
+    "recordCode": "",
+    // github的开发者token(可不填写,不填写每小时最高60次调用)
+    "token": "",
+    // 自定义菜单
+    "outerLinkList": [
+        {
+            "name": "其他项目",
+            "icon": "mdi-file",
+            "items": [
+                {
+                    "name": "百度",
+                    "url": "https://baidu.com"
+                }
+            ]
+        },
+    ],
+    // 显示到菜单中的issues文章number列表(可用作友联)
+    "issuesNumberList": [
+        {
+            "name": "友链",
+            "icon": "mdi-link-variant",
+            "number": 2
+        }
+    ]
 }
 ```
 修改绑定的域名```/public/CNAME```
@@ -36,6 +57,9 @@ blog.5ixf.cc
 - [x] makedown支持
 - [ ] 页面细节优化(日期,makedown样式) 
 - [x] git自动化部署(auto_git.sh文件)
+- [ ] 请求失败相关提示
+- [x] 自定义菜单
+- [ ] 自定义meta标签
 
 ### 考虑中
 - [ ] 评论区

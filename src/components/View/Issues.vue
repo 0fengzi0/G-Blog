@@ -70,7 +70,7 @@
             next(async vm => {
                 let that = this;
                 await vm.getIssues(to.params.id);
-                document.title = "i小风-" + vm.issues.title
+                document.title = vm.$Config.nickname + "的博客-" + vm.issues.title
             })
         },
         // 当页面开始渲染

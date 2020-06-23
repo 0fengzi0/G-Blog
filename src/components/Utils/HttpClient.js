@@ -24,7 +24,7 @@ const instance = axios.create({
     // 请求头
     headers: {
         'Content-Type': "application/x-www-form-urlencoded",
-        "Authorization": window.$config.token
+        "Authorization": window.$Config.token
     }
 });
 

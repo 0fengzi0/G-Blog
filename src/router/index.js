@@ -9,7 +9,7 @@ const routes = [
         name: 'PaperList',
         component: () => import('../components/View/IssuesList'),
         meta: {
-            title: '小风的博客'
+            title: window.$Config.nickname + '的博客'
         }
     },
     {

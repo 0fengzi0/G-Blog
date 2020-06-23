@@ -1,7 +1,7 @@
 <template >
     <v-app-bar app >
         <v-app-bar-nav-icon @click="chickMenuButton" ></v-app-bar-nav-icon >
-        <v-toolbar-title >{{ title }}</v-toolbar-title >
+        <v-toolbar-title >菜单</v-toolbar-title >
         <v-spacer ></v-spacer >
         <v-text-field
                 class="search-imput"
@@ -24,12 +24,6 @@
         name: "TitleBar",
         // 引用组件
         components: {},
-        props: {
-            title: {
-                title: String,
-                default: "主页"
-            }
-        },
         // 绑定数据
         data() {
             return {

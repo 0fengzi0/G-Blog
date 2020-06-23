@@ -7,7 +7,7 @@ import 'vuetify/dist/vuetify.min.css'
 import HttpClient from "./components/Utils/HttpClient"
 import vuescroll from 'vuescroll';
 
-Vue.prototype.$Config = window.$config;
+Vue.prototype.$Config = window.$Config;
 Vue.prototype.$HttpClient = HttpClient;
 Vue.use(Vuetify)
 Vue.use(VueCookies)
