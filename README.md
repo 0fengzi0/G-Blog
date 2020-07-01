@@ -20,6 +20,7 @@ window.$config = {
     // 备案号
     "recordCode": "",
     // github的开发者token(可不填写,不填写每小时最高60次调用)
+	// 注意!!!!github会自动删除泄露的token,此方法仅限部署至其他地方或加密传输!!!
     "token": "",
     // 自定义菜单
     "outerLinkList": [
@@ -63,6 +64,7 @@ blog.5ixf.cc
 - [ ] 请求失败相关提示
 - [x] 自定义菜单
 - [ ] ~~自定义meta标签~~(直接修改index.html文件)
+- [x] 文章版权信息以及issues地址
 
 ### 考虑中
 - [ ] 评论区

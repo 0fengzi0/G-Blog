@@ -4,7 +4,7 @@
 直接Fork [编译完成的](https://github.com/0fengzi0/0fengzi0.github.io) 并修改以下配置即可使用
 
 修改配置文件```/config.js```
-```
+```js
 window.$config = {
     // 页面背景图
     "pageBackGroundImage": "",
@@ -21,6 +21,7 @@ window.$config = {
     // 备案号
     "recordCode": "",
     // github的开发者token(可不填写,不填写每小时最高60次调用)
+	// 注意!!!!github会自动删除泄露的token,此方法仅限部署至其他地方或加密传输!!!
     "token": "",
     // 自定义菜单
     "outerLinkList": [
