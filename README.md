@@ -1,4 +1,7 @@
 # 基于github的个人博客 ([演示地址](https://blog.5ixf.cc))
+### 使用教程
+直接Fork [编译完成的](https://github.com/0fengzi0/0fengzi0.github.io) 并修改配置即可使用
+
 修改配置文件```/public/Config.js```
 ```js
 window.$config = {
@@ -59,7 +62,7 @@ blog.5ixf.cc
 - [x] git自动化部署(auto_git.sh文件)
 - [ ] 请求失败相关提示
 - [x] 自定义菜单
-- [ ] 自定义meta标签
+- [ ] ~~自定义meta标签~~(直接修改index.html文件)
 
 ### 考虑中
 - [ ] 评论区
