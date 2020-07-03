@@ -13,8 +13,11 @@ function errorHandle(res) {
 			break;
 	}
 	res.msg == null ? res.msg = "网络请求错误" : '';
-	// vant的toast显示错误提示
-	// Bus.$toast.fail(res.msg);
+	// 显示错误提示
+	Bus.$emit('showSnackBar', {
+		color: 'error',
+		msg: res.msg
+	});
 }
 
 // 创建axios实例
@@ -24,13 +27,14 @@ const instance = axios.create({
 	// 请求头
 	headers: {
 		'Content-Type': "application/x-www-form-urlencoded",
+		// 添加github token
+		"Authorization": process.env.NODE_ENV === 'production' ? (window.$Config.token == "" ? "" : "token " +
+			window.$Config.token) : (process.env.VUE_APP_GITTOKEN == null ? "" : "token " + process.env.VUE_APP_GITTOKEN)
 	}
 });
 
 // 请求拦截器
 instance.interceptors.request.use(res => {
-	// 添加github token
-	res.headers.Authorization = window.$Config.token == "" ? "" : "token " + window.$Config.token;
 	if (res.method === "post" || res.method === "POST") {
 		res.data.time = new Date().getTime();
 		res.data = qs.stringify(res.data);
@@ -45,8 +49,6 @@ instance.interceptors.request.use(res => {
 instance.interceptors.response.use(res => {
 	return Promise.resolve(res.data);
 }, error => {
-	// vant清理toast
-	// Bus.$toast.clear();
 	let data = {
 		code: error.response.status,
 		msg: error.message,

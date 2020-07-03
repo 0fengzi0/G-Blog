@@ -1,7 +1,7 @@
 # 基于github的个人博客  ([演示地址](https://blog.5ixf.cc))
 本项目由服务器自动构建，源码以及功能请 [点击这里查看](https://github.com/0fengzi0/G-Blog)
 ### 使用教程
-直接Fork [编译完成的](https://github.com/0fengzi0/0fengzi0.github.io) 并修改以下配置即可使用
+直接Fork [编译完成的](https://github.com/0fengzi0/Blog) 并修改以下配置即可使用
 
 修改配置文件```/config.js```
 ```js

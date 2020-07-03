@@ -1,8 +1,20 @@
 # 基于github的个人博客 ([演示地址](https://blog.5ixf.cc))
-### 使用教程
-直接Fork [编译完成的](https://github.com/0fengzi0/0fengzi0.github.io) 并修改配置即可使用
+- 源码以及功能请 [点击这里查看](https://github.com/0fengzi0/G-Blog)
+- 编译完成的请 [点击这里查看](https://github.com/0fengzi0/Blog)
 
-修改配置文件```/public/Config.js```
+### 使用教程
+- 直接Fork [编译完成的](https://github.com/0fengzi0/Blog) 并修改配置即可使用
+
+### 如果自行编译
+1. 克隆本仓库
+```
+git clone https://github.com/0fengzi0/G-Blog
+```
+2. 安装依赖
+```
+yarn
+```
+3. 修改配置文件```/public/Config.js```
 ```js
 window.$config = {
     // 页面背景图
@@ -45,10 +57,16 @@ window.$config = {
     ]
 }
 ```
-修改绑定的域名```/public/CNAME```
+4. 修改绑定的域名```/public/CNAME```
 ```text
 blog.5ixf.cc
 ```
+5. 编译并输出至```dist```目录
+```
+yarn run build
+```
+
+
 ### 计划功能
 - [x] 移动端适配
 - [x] 文章拉取
@@ -59,14 +77,15 @@ blog.5ixf.cc
 - [x] 19:00-7:00自动夜间模式
 - [x] api token提高每小时调用次数
 - [x] makedown支持
-- [ ] 页面细节优化(日期,makedown样式) 
+- [x] 页面细节优化(日期,makedown样式) 
 - [x] git自动化部署(auto_git.sh文件)
-- [ ] 请求失败相关提示
+- [x] 请求失败相关提示
 - [x] 自定义菜单
-- [ ] ~~自定义meta标签~~(直接修改index.html文件)
+- [x] ~~自定义meta标签~~(请直接修改index.html文件)
 - [x] 文章版权信息以及issues地址
 
 ### 考虑中
 - [ ] 评论区
 - [ ] 评论功能
 - [ ] 后台直接发布博客功能
+- [ ] 新的后台。目前项目无后端，由前端直接请求github api，当请求超过每小时60次后需要使用github token解除限制，因为github token泄露可能会有安全性问题，而且暂时我没有更好的解决方法

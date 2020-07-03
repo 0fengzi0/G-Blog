@@ -15,6 +15,7 @@ window.$Config = {
 	// 备案号
 	"recordCode": "豫ICP备20000407号-1",
 	// github的开发者token(可不填写,不填写每小时最高60次调用)
+	// 注意!!!!github会自动删除泄露的token,此方法仅限部署至其他地方或加密传输!!!
 	"token": "",
 	// 外链列表
 	"outerLinkList": [{
@@ -27,6 +28,10 @@ window.$Config = {
 			{
 				"name": "PyOnline-在线Python学习",
 				"url": "https://py.5ixf.vip"
+			},
+			{
+				"name": "GBlog-个人博客",
+				"url": "https://github.com/0fengzi0/G-Blog"
 			}
 		]
 	}, ],
