@@ -23,7 +23,7 @@
                         nav
                         dense
                 >
-                    
+				
                     <v-list-item @click="drawer=false" to="/" >
                         <v-list-item-icon >
                             <v-icon >mdi-home</v-icon >

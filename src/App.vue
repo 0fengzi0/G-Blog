@@ -1,28 +1,11 @@
 <template>
-	<div id="app">
-		<m-scroll>
-			<v-app class="index-bg-img" :style="'background-image: url(' + $Config.pageBackGroundImage + ')'">
-				<SnackBar></SnackBar>
-				<Menu />
-				<title-bar />
-				<v-main>
-					<keep-alive><router-view /></keep-alive>
-				</v-main>
-				<page-foot />
-			</v-app>
-		</m-scroll>
-	</div>
+	<div id="app"><router-view /></div>
 </template>
 
 <script>
-const TitleBar = () => import('./components/View/TitleBar');
-const Menu = () => import('./components/View/Menu');
-const PageFoot = () => import('./components/View/PageFoot');
-import SnackBar from './components/Utils/SnackBar';
-
 export default {
 	name: 'app',
-	components: { TitleBar, Menu, PageFoot, SnackBar },
+	components: {},
 	// 初始化完成
 	mounted() {
 		let that = this;
