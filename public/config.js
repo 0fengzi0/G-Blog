@@ -1,4 +1,6 @@
 window.$Config = {
+	// 百度统计
+	"baidu_hm": "c4d9284f410807a5be62f50d786b9c9e",
 	"description": "哈喽,这是我这个人博客,里面有着我的一些学习经验,欢迎来玩呀",
 	// 页面背景图
 	"pageBackGroundImage": "https://s2.ax1x.com/2019/11/16/Mwyd0S.jpg",
@@ -22,19 +24,19 @@ window.$Config = {
 		"name": "其他项目",
 		"icon": "mdi-file",
 		"items": [{
-				"name": "VOCALTTS-V家语音合成",
-				"url": "https://tts.5ixf.vip"
-			},
-			{
-				"name": "PyOnline-在线Python学习",
-				"url": "https://py.5ixf.vip"
-			},
-			{
-				"name": "GBlog-个人博客",
-				"url": "https://github.com/0fengzi0/G-Blog"
-			}
+			"name": "VOCALTTS-V家语音合成",
+			"url": "https://tts.5ixf.vip"
+		},
+		{
+			"name": "PyOnline-在线Python学习",
+			"url": "https://py.5ixf.vip"
+		},
+		{
+			"name": "GBlog-个人博客",
+			"url": "https://github.com/0fengzi0/G-Blog"
+		}
 		]
-	}, ],
+	},],
 	// 显示到菜单中的issues文章列表
 	"issuesNumberList": [{
 		"name": "友链",

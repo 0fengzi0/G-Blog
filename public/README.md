@@ -6,6 +6,8 @@
 修改配置文件```/config.js```
 ```js
 window.$config = {
+	// 百度统计
+	"baidu_hm": "",
     // 页面背景图
     "pageBackGroundImage": "",
     // 文章头图api

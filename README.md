@@ -17,6 +17,8 @@ yarn
 3. 修改配置文件```/public/Config.js```
 ```js
 window.$config = {
+	// 百度统计
+	"baidu_hm": "",
     // 页面背景图
     "pageBackGroundImage": "",
     // 文章头图api
