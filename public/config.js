@@ -5,7 +5,8 @@ window.$Config = {
 	// 页面背景图
 	"pageBackGroundImage": "https://s2.ax1x.com/2019/11/16/Mwyd0S.jpg",
 	// 文章头图api
-	"pageCardImgServers": "https://api.9jojo.cn/acgpic",
+	// "pageCardImgServers": "https://api.9jojo.cn/acgpic",
+	"pageCardImgServers": "https://api.toomey.top/fj/rand.php",
 	// github用户名
 	"username": "0fengzi0",
 	// 自定义的昵称(显示用)
