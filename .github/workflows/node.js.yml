@@ -35,6 +35,7 @@ jobs:
           git config --local user.name "github bot"
           git add --all
           git commit -m "deploy `TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S'`"
-          git push -f https://GITHUB_TOKEN@github.com/0fengzi0/$dist_repo_name.git master
+          git remote add origin https://GITHUB_TOKEN@github.com/0fengzi0/$dist_repo_name.git
+          git push --force --quiet origin master
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
