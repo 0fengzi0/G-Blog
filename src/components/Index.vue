@@ -15,9 +15,9 @@
 </template>
 
 <script>
-const TitleBar = () => import('./TitleBar');
-const Menu = () => import('./Menu');
-const PageFoot = () => import('./PageFoot');
+const TitleBar = () => import('../View/TitleBar');
+const Menu = () => import('../View/Menu');
+const PageFoot = () => import('../View/PageFoot');
 import SnackBar from '../Utils/SnackBar';
 
 export default {

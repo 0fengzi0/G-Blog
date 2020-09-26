@@ -2,47 +2,45 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="icon" href="<%= BASE_URL %>favicon.ico">
-	<title>
-		<%= htmlWebpackPlugin.options.title %>
-	</title>
-	<!--引入配置-->
-	<script src="config.js"></script>
-	<!--网站关键词-->
-	<meta name="keywords" content="blog, 博客, 个人小站, github, github page, issues">
-	<!--网站主题简介-->
-	<meta name="subject" content="一个基于Github的个人博客小站">
-	<!--网站摘要-->
-	<meta name="description" content="哈喽,这是我这个人博客,里面有着我的一些奇奇怪怪的东西,欢迎来玩呀">
-	<!--引入字体-->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
-	<!-- 百度统计 -->
-	<script>
-		if (window.$Config.baidu_hm != "" && window.$Config.baidu_hm != null) {
-			var _hmt = _hmt || [];
-			(function () {
-				var hm = document.createElement("script");
-				hm.src = "https://hm.baidu.com/hm.js?" + window.$Config.baidu_hm;
-				var s = document.getElementsByTagName("script")[0];
-				s.parentNode.insertBefore(hm, s);
-			})();
-		}
-	</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <!--引入配置-->
+    <script src="config.js"></script>
+    <!--网站关键词-->
+    <meta name="keywords" content="blog, 博客, 个人小站, github, github page, issues">
+    <!--网站主题简介-->
+    <meta name="subject" content="一个基于Github的个人博客小站">
+    <!--网站摘要-->
+    <meta name="description" content="哈喽,这是我这个人博客,里面有着我的一些奇奇怪怪的东西,欢迎来玩呀">
+    <!--引入字体-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c4d9284f410807a5be62f50d786b9c9e";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
 </head>
 
 <body>
-	<noscript>
-		<strong>We're sorry but
-			<%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
-			Please enable it to continue.</strong>
-	</noscript>
-	<div id="app"></div>
-	<!-- built files will be auto injected -->
+<noscript>
+    <strong>We're sorry but
+        <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
 </body>
 
 </html>

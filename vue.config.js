@@ -2,8 +2,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
-
-if ( process.env.NODE_ENV === 'production' ) {
+if (process.env.NODE_ENV === 'production') {
     module.exports = {
         publicPath: '',
         // webpack的相关配置在这里
@@ -36,7 +35,6 @@ if ( process.env.NODE_ENV === 'production' ) {
 } else {
     module.exports = {
         publicPath: '',
-        
         // 开发环境配置
         devServer: {
             disableHostCheck: true,

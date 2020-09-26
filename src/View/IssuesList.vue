@@ -32,7 +32,7 @@
 </template >
 
 <script >
-    import Issues from "../Http/Issues";
+    import Issues from "../api/Issues";
     import Bus from "../Utils/Bus";
     
     export default {
