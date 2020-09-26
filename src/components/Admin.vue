@@ -21,10 +21,10 @@
 </template>
 
 <script>
-const TitleBar = () => import('../../View/TitleBar');
-const Menu = () => import('../../View/Menu');
-const PageFoot = () => import('../../View/PageFoot');
-import SnackBar from '../../Utils/SnackBar';
+const TitleBar = () => import('../View/User/TitleBar');
+const Menu = () => import('../View/User/Menu');
+const PageFoot = () => import('../View/User/PageFoot');
+import SnackBar from '../Utils/SnackBar';
 
 export default {
 	name: 'Index',

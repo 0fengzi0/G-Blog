@@ -75,8 +75,8 @@
 </template>
 
 <script>
-import Bus from "../Utils/Bus";
-import Labels from "../api/Labels";
+import Bus from "../../Utils/Bus";
+import Labels from "../../api/Labels";
 
 export default {
   name: "Menu",

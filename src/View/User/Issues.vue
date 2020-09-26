@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import Issues from '../api/Issues';
+import Issues from '../../api/Issues';
 
 const MarkdownIt = require('markdown-it'),
     md = new MarkdownIt();

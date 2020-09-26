@@ -32,8 +32,8 @@
 </template >
 
 <script >
-    import Issues from "../api/Issues";
-    import Bus from "../Utils/Bus";
+    import Issues from "../../api/Issues";
+    import Bus from "../../Utils/Bus";
     
     export default {
         name: "IssuesList",
