@@ -26,15 +26,13 @@ jobs:
     - name: Update dist folder to current repository
       run: |
         cd dist
-        pwd
-        ls
         git config --global user.email "5ixf@5ixf.vip"
         git config --global user.name "0fengzi0"
-        # git config --global github.token "$GITHUB_TOKEN"
+        git config --global github.token "$GITHUB_TOKEN"
         git init
         git add -A
         git commit -m "GitHub Action 自动提交"
-        git remote add origin "https://$GITHUB_TOKEN@github.com/0fengzi0/Blog.git"
+        git remote add origin "https://github.com/0fengzi0/Blog.git"
         git push --force --quiet origin master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
