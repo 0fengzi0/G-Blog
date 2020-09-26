@@ -1,13 +1,17 @@
 name: buildAndDeploy
 
-# 当master分支提交时
+env:
+  TZ: Asia/Shanghai
+
+
 on:
+  # 当master分支提交时
   push:
     branches: 
       - master
-
-env:
-  TZ: Asia/Shanghai
+  # 定时任务
+  schedule:
+    - cron: "0 18 * * 6"
 
 # 开始任务
 jobs:
@@ -27,10 +31,14 @@ jobs:
         
     - name: Update dist folder to current repository
       env:
+        # 你的GitHub名字
         GITHUB_USERNAME: "0fengzi0"
+        # 你的邮箱
         EMAIL: "5ixf@5ixf.vip"
-        GITHUB_REPO: "github.com/$GITHUB_USERNAME/Blog.git"
-        GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
+        # 作为博客的仓库名
+        BLOG_REPO: "Blog"
+        # GitHub Token
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
       run: |
         git config --global user.email $GITHUB_USERNAME
@@ -38,5 +46,5 @@ jobs:
         
         cd dist && git init && git add .
         git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-        git push --force --quiet "https://GITHUB_TOKEN@$GITHUB_REPO" master:master
+        git push --force --quiet "https://GITHUB_TOKEN@github.com/$GITHUB_USERNAME/$BLOG_REPO.git" master:master
         
