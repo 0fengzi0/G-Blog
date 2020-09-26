@@ -30,6 +30,7 @@ jobs:
         ls
         git config --local user.email "bot@5ixf.vip"
         git config --local user.name "GitHub Bot"
+        git init
         git add -A
         git commit -m "GitHub Action 自动提交"
         git remote add origin "https://$GITHUB_TOKEN@github.com/$USER_NAME/$REPO_NAME.git"
