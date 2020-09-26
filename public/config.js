@@ -3,8 +3,10 @@ window.$Config = {
     // 页面背景图
     "pageBackGroundImage": "https://s2.ax1x.com/2019/11/16/Mwyd0S.jpg",
     // 文章头图api
-    "pageCardImgServers": "https://api.9jojo.cn/acgpic",
+    // 风景类
     // "pageCardImgServers": "https://api.toomey.top/fj/rand.php",
+    // 二次元类
+    "pageCardImgServers": "https://api.9jojo.cn/acgpic",
     // github用户名
     "username": "0fengzi0",
     // 自定义的昵称(显示用)
@@ -53,9 +55,17 @@ window.$Config = {
                     "url": "https://space.bilibili.com/13938564"
                 },
                 {
+                    "name": "GitHub",
+                    "url": "https://github.com/0fengzi0"
+                },
+                {
+                    "name": "GitEE",
+                    "url": "https://gitee.com/feng__zi"
+                },
+                {
                     "name": "E-Mail",
                     "url": "mailto:5ixf@5ixf.vip"
-                }
+                },
             ]
         }
     ],
