@@ -21,7 +21,7 @@ jobs:
       run: |
         echo "开始安装和构建"
         yarn
-        yarn run bulid
+        yarn run build
         
     - name: Update dist folder to current repository
       run: |
