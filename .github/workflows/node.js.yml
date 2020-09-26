@@ -1,41 +1,38 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+name: buildAndDeploy
 
-name: Node.js CI
-
+# 当master分支提交时
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: 
+      - master
 
+
+# 开始任务
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
+  main:
+    runs-on: ubuntu-latest # 我们选择使用最新的ubuntu系统
+    # 将代码拷贝到虚机中
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: |
-        yarn
-        yarn run build
-      
-    - name: Commit files and push
+    - name: checkout
+      uses: actions/checkout@master
+    
+    # 安装和构建
+    - name: Install and Build
       run: |
-          cd dist
-          git config --local user.email "bot@5ixf.vip"
-          git config --local user.name "github bot"
-          git add --all
-          git commit -m "deploy `TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S'`"
-          git remote add origin https://GITHUB_TOKEN@github.com/0fengzi0/$dist_repo_name.git
-          git push --force --quiet origin master
+        echo "开始安装和构建"
+        yarn
+        yarn run bulid
+        
+    - name: Update dist folder to current repository
+      run: |
+        cd dist
+        git config --local user.email "bot@5ixf.vip"
+        git config --local user.name "GitHub Bot"
+        git add -A
+        git commit -m "GitHub Action 自动提交"
+        git remote add origin "https://$GITHUB_TOKEN@github.com/$USER_NAME/$REPO_NAME.git"
+        git push --force --quiet origin master
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
+        USER_NAME: "0fengzi0"
+        REPO_NAME: "Blog"
