@@ -28,8 +28,8 @@ jobs:
         cd dist
         pwd
         ls
-        git config --local user.email "bot@5ixf.vip"
-        git config --local user.name "GitHub Bot"
+        git config --global user.email "bot@5ixf.vip"
+        git config --global user.name "GitHub Action Bot"
         git init
         git add -A
         git commit -m "GitHub Action 自动提交"
