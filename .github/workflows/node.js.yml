@@ -9,9 +9,6 @@ on:
   push:
     branches: 
       - master
-  # 定时任务
-  schedule:
-    - cron: "0 18 * * 6"
 
 # 开始任务
 jobs:
@@ -29,7 +26,7 @@ jobs:
         yarn
         yarn run build
         
-    - name: Update dist folder to current repository
+    - name: Update dist folder to repository
       env:
         # 你的GitHub名字
         GITHUB_USERNAME: "0fengzi0"
@@ -38,7 +35,7 @@ jobs:
         # 作为博客的仓库名
         BLOG_REPO: "Blog"
         # GitHub Token
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
         
       run: |
         git config --global user.email $GITHUB_USERNAME
