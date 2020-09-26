@@ -25,8 +25,8 @@ jobs:
         
     - name: Update dist folder to current repository
       run: |
-        git config user.email "5ixf@5ixf.vip"
-        git config user.name "0fengzi0"
+        git config --global user.email "5ixf@5ixf.vip"
+        git config --global user.name "0fengzi0"
         
         cd dist && git init && git add .
         git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
