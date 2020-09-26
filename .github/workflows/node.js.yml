@@ -30,11 +30,11 @@ jobs:
         ls
         git config --global user.email $EMAIL
         git config --global user.name $USER_NAME
-        git config --global github.token $GITHUB_TOKEN
+        # git config --global github.token $GITHUB_TOKEN
         git init
         git add -A
         git commit -m "GitHub Action 自动提交"
-        git remote add origin https://github.com/$USER_NAME/$REPO_NAME.git
+        git remote add origin https://$GITHUB_TOKEN:github.com/$USER_NAME/$REPO_NAME.git
         git push --force --quiet origin master
       env:
         GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
