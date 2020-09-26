@@ -26,6 +26,8 @@ jobs:
     - name: Update dist folder to current repository
       run: |
         cd dist
+        pwd
+        ls
         git config --local user.email "bot@5ixf.vip"
         git config --local user.name "GitHub Bot"
         git add -A
