@@ -28,8 +28,8 @@ jobs:
         cd dist
         pwd
         ls
-        git config --global user.email "bot@5ixf.vip"
-        git config --global user.name "GitHub Action Bot"
+        git config --global user.email $EMAIL
+        git config --global user.name $USER_NAME
         git config --global github.token $GITHUB_TOKEN
         git init
         git add -A
@@ -40,3 +40,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
         USER_NAME: "0fengzi0"
         REPO_NAME: "Blog"
+        EMAIL: "1209711408@qq.com"
