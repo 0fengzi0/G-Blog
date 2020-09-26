@@ -10,29 +10,26 @@ on:
 # 开始任务
 jobs:
   main:
-    runs-on: ubuntu-latest # 我们选择使用最新的ubuntu系统
-    # 将代码拷贝到虚机中
+    runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@master
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12'
     
     # 安装和构建
     - name: Install and Build
       run: |
-        echo "开始安装和构建"
         yarn
         yarn run build
         
     - name: Update dist folder to current repository
       run: |
-        cd dist
-        git config --global user.email "5ixf@5ixf.vip"
-        git config --global user.name "0fengzi0"
-        git config --global github.token "$GITHUB_TOKEN"
-        git init
-        git add -A
-        git commit -m "GitHub Action 自动提交"
-        git remote add origin "https://github.com/0fengzi0/Blog.git"
-        git push --force --quiet origin master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        git config user.email "5ixf@5ixf.vip"
+        git config user.name "0fengzi0"
+        
+        cd dist && git init && git add .
+        git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
+        git push --force --quiet "https://${{ secrets.G_TOKEN }}@github.com/0fengzi0/Blog.git" master:master
+        
+        
