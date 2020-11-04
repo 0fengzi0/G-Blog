@@ -1,5 +1,4 @@
 window.$Config = {
-    "description": "哈喽,这是我这个人博客,里面有着我的一些学习经验,欢迎来玩呀",
     // 页面背景图
     "pageBackGroundImage": "https://s2.ax1x.com/2019/11/16/Mwyd0S.jpg",
     // 文章头图api
@@ -22,11 +21,12 @@ window.$Config = {
     // github的开发者token(可不填写,不填写每小时最高60次调用)
     // 注意!!!!github会自动删除泄露的token,此方法仅限部署至其他地方或加密传输!!!
     "token": "",
-    // 外链列表
-    "outerLinkList": [
+    // 菜单列表
+    "menuList": [
         {
             "name": "其他项目",
             "icon": "mdi-file",
+            "type": "list",
             "items": [
                 {
                     "name": "VOCALTTS-V家语音合成",
@@ -45,6 +45,7 @@ window.$Config = {
         {
             "name": "个人主页",
             "icon": "mdi-airballoon",
+            "type": "list",
             "items": [
                 {
                     "name": "i小风的博客",
@@ -67,12 +68,12 @@ window.$Config = {
                     "url": "mailto:5ixf@5ixf.vip"
                 },
             ]
+        },
+        {
+            "name": "友链",
+            "icon": "mdi-link-variant",
+            "number": 2,
+            "type": "issuesItem"
         }
-    ],
-    // 显示到菜单中的issues文章列表
-    "issuesNumberList": [{
-        "name": "友链",
-        "icon": "mdi-link-variant",
-        "number": 2
-    }]
+    ]
 }

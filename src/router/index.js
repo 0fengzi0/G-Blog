@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
@@ -16,14 +16,14 @@ const routes = [
             {
                 path: '/',
                 name: 'PaperList',
-                component: () => import('../View/IssuesList'),
+                component: () => import('../View/User/IssuesList'),
                 meta: {
                     title: ''
                 }
             }, {
                 path: '/paper/:id',
                 name: 'PaperList',
-                component: () => import('../View/Issues'),
+                component: () => import('../View/User/Issues'),
                 meta: {
                     title: ''
                 }
@@ -33,7 +33,7 @@ const routes = [
     }, {
         path: '/admin',
         name: 'Admin',
-        component: () => import('../components/Admin/Index'),
+        component: () => import('../components/Admin'),
         meta: {
             title: '后台管理'
         }
@@ -51,9 +51,9 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     //判断是否有标题
     if (to.meta.title) {
-        document.title = to.meta.title
+        document.title = to.meta.title;
     }
-    next()
-})
+    next();
+});
 
-export default router
+export default router;

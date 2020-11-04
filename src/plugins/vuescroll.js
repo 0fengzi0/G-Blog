@@ -15,6 +15,6 @@ const opts = {
             background: new Date().getHours() >= 19 || new Date().getHours() < 7 ? 'white' : 'black',
         }
     }
-}
+};
 
 Vue.use(vuescroll, opts);

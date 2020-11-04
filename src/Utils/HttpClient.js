@@ -1,18 +1,18 @@
-import axios from "axios"
+import axios from 'axios';
 import qs from 'qs';
-import Bus from "./Bus";
+import Bus from './Bus';
 
-import router from "../router";
+import router from '../router';
 
 // 统一异常处理部分
-function errorHandle(res) {
+function errorHandle (res) {
     switch (res.code) {
         case 404:
-            res.msg = "404文件不存在"
-            router.push("/");
+            res.msg = '404文件不存在';
+            router.push('/');
             break;
     }
-    res.msg == null ? res.msg = "网络请求错误" : '';
+    res.msg == null ? res.msg = '网络请求错误' : '';
     // 显示错误提示
     Bus.$emit('showSnackBar', {
         color: 'error',
@@ -26,20 +26,20 @@ const instance = axios.create({
     timeout: 1000 * 15,
     // 请求头
     headers: {
-        'Content-Type': "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
         // 添加github token
-        "Authorization": process.env.NODE_ENV === 'production' ? (window.$Config.token == "" ? "" : "token " +
-            window.$Config.token) : (process.env.VUE_APP_GITTOKEN == null ? "" : "token " + process.env.VUE_APP_GITTOKEN)
+        'Authorization': process.env.NODE_ENV === 'production' ? (window.$Config.token == '' ? '' : 'token ' +
+                window.$Config.token) : (process.env.VUE_APP_GITTOKEN == null ? '' : 'token ' + process.env.VUE_APP_GITTOKEN)
     }
 });
 
 // 请求拦截器
 instance.interceptors.request.use(res => {
-    if (res.method === "post" || res.method === "POST") {
+    if (res.method === 'post' || res.method === 'POST') {
         res.data.time = new Date().getTime();
         res.data = qs.stringify(res.data);
         return res;
-    } else if (res.method === "get" || res.method === "GET") {
+    } else if (res.method === 'get' || res.method === 'GET') {
         res.params.time = new Date().getTime();
         return res;
     }
@@ -60,28 +60,21 @@ instance.interceptors.response.use(res => {
 
 // 设置服务器地址,开发环境用
 let serviceHost = (process.env.NODE_ENV === 'production' || process.env.VUE_APP_HOST == null) ?
-    'https://api.github.com' : process.env.VUE_APP_HOST;
+        'https://api.github.com' : process.env.VUE_APP_HOST;
 
-
-function doHttp(url = "", type = "get", data = {}) {
-    // vant显示加载toast
-    // Bus.$toast.loading({
-    //     message: '加载中...',
-    //     forbidClick: true,
-    //     duration: 0
-    // });
-    if (type === "get" || type === "GET") {
+function doHttp (url = '', type = 'get', data = {}) {
+    if (type === 'get' || type === 'GET') {
         return instance.get(serviceHost + url, {
             params: data
-        })
-    } else if (type === "post" || type === "POST") {
+        });
+    } else if (type === 'post' || type === 'POST') {
         return instance.post(serviceHost + url,
-            data
-        )
+                data
+        );
     }
 }
 
 export default {
     doHttp,
     serviceHost
-}
+};
