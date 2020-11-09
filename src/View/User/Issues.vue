@@ -18,7 +18,10 @@
                             </v-avatar>
                             <div>
                                 <div class="">{{ $Config.nickname }}</div>
-                                <div class="body-2 font-weight-light">{{ issues.created_at }}</div>
+                                <div class="body-2 font-weight-light">{{
+                                        TimeUtil.timeFormate(issues.updated_at)
+                                    }}
+                                </div>
                             </div>
                         </v-card-title>
                     </v-card>
@@ -47,7 +50,7 @@
                                     }}
                                 </a>
                                 <br/>
-                                最后修改时间：{{ issues.updated_at }}
+                                最后修改时间：{{ TimeUtil.timeFormate(issues.updated_at) }}
                                 <br/>
                                 本站未注明转载的文章均为原创，并采用
                                 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">BY-NC-SA
@@ -65,6 +68,7 @@
 
 <script>
 import Issues from '../../api/Issues';
+import TimeUtil from '@/Utils/TimeUtil';
 
 const MarkdownIt = require('markdown-it'),
         md = new MarkdownIt();
@@ -76,6 +80,7 @@ export default {
     // 绑定数据
     data () {
         return {
+            TimeUtil: TimeUtil,
             isLoading: true,
             mdtext: '',
             issues: {

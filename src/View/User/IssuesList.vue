@@ -22,7 +22,7 @@
 
                         <v-card-title>{{ item.title }}</v-card-title>
                         <v-card-text class="text--primary">
-                            {{ item.created_at }}
+                            {{ TimeUtil.timeFormate(item.created_at) }}
                         </v-card-text>
                     </v-card>
                 </v-skeleton-loader>
@@ -34,6 +34,7 @@
 <script>
 import Issues from '../../api/Issues';
 import Bus from '../../Utils/Bus';
+import TimeUtil from '@/Utils/TimeUtil';
 
 export default {
     name: 'IssuesList',
@@ -43,7 +44,8 @@ export default {
     data () {
         return {
             isLoading: true,
-            issuesList: 4
+            issuesList: 4,
+            TimeUtil: TimeUtil
         };
     },
     // 当页面开始渲染
