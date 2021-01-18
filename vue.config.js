@@ -4,7 +4,7 @@ const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 if (process.env.NODE_ENV === 'production') {
     module.exports = {
-        publicPath: '',
+		publicPath: 'https://cdn.jsdelivr.net/gh/0fengzi0/Blog/',
         // webpack的相关配置在这里
         configureWebpack: {
             plugins: [
