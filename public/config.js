@@ -56,6 +56,10 @@ window.$Config = {
                     "url": "https://space.bilibili.com/13938564"
                 },
                 {
+                    "name": "网易云音乐",
+                    "url": "https://music.163.com/#/artist?id=46815427"
+                },
+                {
                     "name": "GitHub",
                     "url": "https://github.com/0fengzi0"
                 },
