@@ -33,7 +33,7 @@ jobs:
           # 作为博客的仓库名
           REPO_NAME: "Blog"
           # GitHub Token
-          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
         run: |
           git config --global user.email "Action@GitHub.com"
