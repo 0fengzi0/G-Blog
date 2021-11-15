@@ -5,7 +5,7 @@ window.$Config = {
     // 风景类
     // "pageCardImgServers": "https://api.toomey.top/fj/rand.php",
     // 二次元类
-    "pageCardImgServers": "https://api.9jojo.cn/acgpic",
+    "pageCardImgServers": "https://api.ixiaowai.cn/api/api.php",
     // github用户名
     "username": "0fengzi0",
     // 自定义的昵称(显示用)
