@@ -3,9 +3,6 @@
 - 编译完成的请 [点击这里查看](https://github.com/0fengzi0/Blog)
 
 ### 使用教程
-- 直接Fork [编译完成的](https://github.com/0fengzi0/Blog) 并修改配置即可使用
-
-### 如果自行编译
 **1.克隆本仓库**
 
 ``` bash
