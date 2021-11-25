@@ -22,6 +22,7 @@ yarn
 ```src/config/userConfig.js```
 
 **4.修改GitHub Action自动发布的相关配置并添加GITHUB TOKEN**(可选)
+
 ```.github/workflows/node.js.yml```
 
 **5.修改绑定的域名**(可选,GitHub Pages自定义域名解析用)
