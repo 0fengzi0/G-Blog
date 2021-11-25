@@ -17,23 +17,15 @@ yarn
 
 ```/public/config.js```
 
-**4.修改百度统计代码**(可查看有多少人访问你的网站)
-
-```/public/index.html```
-
-**5.修改网站相关信息**
-
-```/public/index.html```
-
-**6.修改绑定的域名**(GitHub Pages自定义域名解析用)
+**4.修改绑定的域名**(GitHub Pages自定义域名解析用)
 
 ```/public/CNAME```
 
-**7.修改PWA应用相关配置**
+**5.修改PWA应用相关配置**
 
 ```/public/manifest.json```
 
-**8.获取你的pwa应用ico,并替换/public/img/*.png**
+**6.获取你的pwa应用ico,并替换/public/img/*.png**
 
 [点击打开](https://www.pwabuilder.com/imageGenerator)
 
