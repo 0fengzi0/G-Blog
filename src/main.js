@@ -8,12 +8,13 @@ import './plugins/vuecookies.js';
 import vuetify from './plugins/vuetify';
 import HttpClient from './Utils/HttpClient';
 import 'github-markdown-css';
+import userConfig from "./config/userConfig";
 
-Vue.prototype.$Config = window.$Config;
+Vue.prototype.$Config = userConfig;
 Vue.prototype.$HttpClient = HttpClient;
 Vue.config.productionTip = false;
 
-document.title = window.$Config.nickname + '的博客';
+document.title = userConfig.nickname + '的博客';
 
 new Vue({
     router,

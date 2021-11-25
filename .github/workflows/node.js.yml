@@ -9,6 +9,8 @@ on:
   push:
     branches:
       - master
+#  手动触发
+  workflow_dispatch:
 
 # 开始任务
 jobs:

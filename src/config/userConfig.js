@@ -1,4 +1,4 @@
-window.$Config = {
+const userConfig = {
     // 页面背景图
     "pageBackGroundImage": "https://s2.ax1x.com/2019/11/16/Mwyd0S.jpg",
     // 文章头图api
@@ -81,3 +81,5 @@ window.$Config = {
         }
     ]
 }
+
+export default userConfig

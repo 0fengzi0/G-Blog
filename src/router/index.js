@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import userConfig from "../config/userConfig";
 
 Vue.use(VueRouter);
 
@@ -10,7 +11,7 @@ const routes = [
         name: 'PaperList',
         component: () => import('../components/Index'),
         meta: {
-            title: window.$Config.nickname + '的博客'
+            title: userConfig.nickname + '的博客'
         },
         children: [
             {

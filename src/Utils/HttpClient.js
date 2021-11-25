@@ -1,11 +1,12 @@
 import axios from 'axios';
 import qs from 'qs';
 import Bus from './Bus';
+import userConfig from "../config/userConfig";
 
 import router from '../router';
 
 // 统一异常处理部分
-function errorHandle (res) {
+function errorHandle(res) {
     switch (res.code) {
         case 404:
             res.msg = '404文件不存在';
@@ -28,8 +29,8 @@ const instance = axios.create({
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         // 添加github token
-        'Authorization': process.env.NODE_ENV === 'production' ? (window.$Config.token == '' ? '' : 'token ' +
-                window.$Config.token) : (process.env.VUE_APP_GITTOKEN == null ? '' : 'token ' + process.env.VUE_APP_GITTOKEN)
+        'Authorization': process.env.NODE_ENV === 'production' ? (userConfig.token === '' ? '' : 'token ' +
+            userConfig.token) : (process.env.VUE_APP_GITTOKEN == null ? '' : 'token ' + process.env.VUE_APP_GITTOKEN)
     }
 });
 
@@ -60,16 +61,16 @@ instance.interceptors.response.use(res => {
 
 // 设置服务器地址,开发环境用
 let serviceHost = (process.env.NODE_ENV === 'production' || process.env.VUE_APP_HOST == null) ?
-        'https://api.github.com' : process.env.VUE_APP_HOST;
+    'https://api.github.com' : process.env.VUE_APP_HOST;
 
-function doHttp (url = '', type = 'get', data = {}) {
+function doHttp(url = '', type = 'get', data = {}) {
     if (type === 'get' || type === 'GET') {
         return instance.get(serviceHost + url, {
             params: data
         });
     } else if (type === 'post' || type === 'POST') {
         return instance.post(serviceHost + url,
-                data
+            data
         );
     }
 }
