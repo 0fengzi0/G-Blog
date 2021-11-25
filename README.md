@@ -33,7 +33,7 @@ yarn
 
 ```/public/manifest.json```
 
-**7.获取你的pwa应用ico,并替换/public/img/\*.png**
+**7.获取你的pwa应用ico,并替换/public/img/\*.png**(可选)
 
 [点击打开](https://www.pwabuilder.com/imageGenerator)
 
