@@ -11,7 +11,9 @@ const routes = [
         name: 'PaperList',
         component: () => import('../components/Index'),
         meta: {
-            title: userConfig.nickname + '的博客'
+            // title: userConfig.nickname + '的博客'
+            // 备案审核用
+            title: '技术展示'
         },
         children: [
             {
