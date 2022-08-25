@@ -6,7 +6,7 @@
             </v-col>
             <v-col cols="12" v-if="$Config.recordCode!=null&&$Config.recordCode!=''">
                 <a :class="$vuetify.theme.dark?'white--text':'black--text'"
-                   href="http://www.beian.miit.gov.cn/">{{ $Config.recordCode }}
+                   href="http://beian.miit.gov.cn/">{{ $Config.recordCode }}
                 </a>
             </v-col>
         </v-row>
