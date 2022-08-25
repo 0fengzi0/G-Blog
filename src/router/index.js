@@ -12,8 +12,6 @@ const routes = [
         component: () => import('../components/Index'),
         meta: {
             // title: userConfig.nickname + '的博客'
-            // 备案审核用
-            title: '我的技术记录'
         },
         children: [
             {
