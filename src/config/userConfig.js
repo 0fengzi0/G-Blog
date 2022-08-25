@@ -3,7 +3,7 @@ const userConfig = {
     "pageBackGroundImage": "https://s2.ax1x.com/2019/11/16/Mwyd0S.jpg",
     // 文章头图api
     // 风景类
-    "pageCardImgServers": "https://api.toomey.top/fj/rand.php",
+    "pageCardImgServers": "https://api.vvhan.com/api/view",
     // 二次元类
     // "pageCardImgServers": "https://api.ixiaowai.cn/api/api.php",
     // github用户名
