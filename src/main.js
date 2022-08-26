@@ -14,8 +14,6 @@ Vue.prototype.$Config = userConfig;
 Vue.prototype.$HttpClient = HttpClient;
 Vue.config.productionTip = false;
 
-document.title = userConfig.nickname + '的博客';
-
 new Vue({
     router,
     store,
