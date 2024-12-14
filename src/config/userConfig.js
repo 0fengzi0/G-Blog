@@ -17,7 +17,7 @@ const userConfig = {
     // 要抓取issues的仓库
     "repo": "blog",
     // 备案号
-    "recordCode": "豫ICP备20000407号-1",
+    "recordCode": "豫ICP备20000407号-2",
     // github的开发者token(可不填写,不填写每小时最高60次调用)
     // 注意!!!!github会自动删除泄露的token,此方法仅限部署至其他地方或加密传输!!!
     "token": "",
